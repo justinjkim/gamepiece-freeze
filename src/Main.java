@@ -28,5 +28,9 @@ public class Main {
         knight.move(112, 313);
         knight.move(53, -10);
         knight.move(70, 501);
+        knight.move(101,501);
+        knight.move(-53, -28);
+        knight.move(333, 600);
+        knight.move(123, -98);
     }
 }
