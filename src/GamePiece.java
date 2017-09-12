@@ -3,6 +3,10 @@ import java.util.Random;
 public class GamePiece {
     int positionX;
     int positionY;
+    int minX;
+    int maxX;
+    int minY;
+    int maxY;
     boolean frozen;
     String name;
     String color;
