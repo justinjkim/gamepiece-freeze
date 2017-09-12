@@ -74,19 +74,19 @@ public class GamePiece {
         if (this.frozen == false) {
             if (positionX < 0) {
                 this.positionX = 0;
-                System.out.printf("Sorry, your X coordinate cannot be less than 0. Setting your game piece of positionX at the lowest possible value of 0. Your new coordinate is now (%s, %s).", this.positionX, positionY);
+                System.out.printf("Sorry, your X coordinate cannot be less than 0. Setting your game piece of positionX at the lowest possible value of 0. Your new coordinate is now (%s, %s).%n", this.positionX, positionY);
             }
             else if (positionX > 100) {
                 this.positionX = 100;
-                System.out.printf("Sorry, your X coordinate cannot be greater than 100. Setting your game piece of positionX at the highest possible value of 100. Your new coordinate is now (%s, %s).", this.positionX, positionY);
+                System.out.printf("Sorry, your X coordinate cannot be greater than 100. Setting your game piece of positionX at the highest possible value of 100. Your new coordinate is now (%s, %s).%n", this.positionX, positionY);
             }
             else if (positionY < 0) {
                 this.positionY = 0;
-                System.out.printf("Sorry, your Y coordinate cannot be less than 0. Setting your game piece of positionY at the lowest possible value of 0. Your new coordinate is now (%s, %s).", positionX, this.positionY);
+                System.out.printf("Sorry, your Y coordinate cannot be less than 0. Setting your game piece of positionY at the lowest possible value of 0. Your new coordinate is now (%s, %s).%n", positionX, this.positionY);
             }
             else if (positionY > 500) {
                 this.positionY = 500;
-                System.out.printf("Sorry, your Y coordinate cannot be greater than 500. Setting your game piece of positionY at the highest possible value of 500. Your new coordinate is now (%s, %s).", positionX, this.positionY);
+                System.out.printf("Sorry, your Y coordinate cannot be greater than 500. Setting your game piece of positionY at the highest possible value of 500. Your new coordinate is now (%s, %s).%n", positionX, this.positionY);
             }
             else {
                 this.positionX = positionX;
