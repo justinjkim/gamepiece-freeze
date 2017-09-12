@@ -24,6 +24,9 @@ public class Main {
         knight.move(76,234);
 
         // test to ensure moves don't go out of bounds
-        knight.move(-3, 500);
+        knight.move(-3, 499);
+        knight.move(112, 313);
+        knight.move(53, -10);
+        knight.move(70, 501);
     }
 }
