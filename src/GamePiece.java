@@ -72,7 +72,12 @@ public class GamePiece {
     public void move(int positionX, int positionY) {
        // Random random = new Random(); - don't need this if users manually input moves
         if (this.frozen == false) {
-            if (positionX < 0) {
+            if ((positionX < 0 || positionX > 100) && (positionY < 0 || positionY > 500)) {
+                System.out.printf("Ok, that move of (%s, %s) is really off the grid. Please try again while we set your move coordinates to (0, 0).%n", positionX, positionY);
+                this.positionX = 0;
+                this.positionY = 0;
+            }
+            else if (positionX < 0) {
                 this.positionX = 0;
                 System.out.printf("Sorry, your X coordinate cannot be less than 0. Setting your game piece of positionX at the lowest possible value of 0. Your new coordinate is now (%s, %s).%n", this.positionX, positionY);
             }
