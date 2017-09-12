@@ -15,6 +15,10 @@ public class GamePiece {
         this.positionX = 0;
         this.positionY = 0;
         this.frozen = false;
+        this.minX = 0;
+        this.maxX = 100;
+        this.minY = 0;
+        this.maxY = 500;
     }
 
     public int getPositionX() {
@@ -25,6 +29,26 @@ public class GamePiece {
     public int getPositionY() {
         System.out.println("positionY: " + positionY);
         return positionY;
+    }
+
+    public int getMinX() {
+        System.out.println("minX: " + minX);
+        return minX;
+    }
+
+    public int getMaxX() {
+        System.out.println("maxX: " + maxX);
+        return maxX;
+    }
+
+    public int getMinY() {
+        System.out.println("minY: " + minY);
+        return minY;
+    }
+
+    public int getMaxY() {
+        System.out.println("maxY: " + maxY);
+        return maxY;
     }
 
     public String getName() {
@@ -46,13 +70,32 @@ public class GamePiece {
     }
 
     public void move(int positionX, int positionY) {
-        Random random = new Random();
+       // Random random = new Random(); - don't need this if users manually input moves
         if (this.frozen == false) {
-            this.positionX = positionX;
-            this.positionY = positionY;
-            System.out.printf("You have moved the piece to (%s, %s). %n", positionX, positionY);
+            if (positionX < 0) {
+                this.positionX = 0;
+                System.out.println("Sorry, your X coordinate cannot be less than 0. Setting your game piece of positionX at the lowest possible value: 0.");
+            }
+            else if (positionX > 100) {
+                this.positionX = 100;
+                System.out.println("Sorry, your X coordinate cannot be greater than 100. Setting your game piece of positionX at the highest possible value: 100");
+            }
+            else if (positionY < 0) {
+                this.positionY = 0;
+                System.out.println("Sorry, your Y coordinate cannot be less than 0. Setting your game piece of positionY at the lowest possible value: 0.");
+            }
+            else if (positionY > 500) {
+                this.positionY = 500;
+                System.out.println("Sorry, your Y coordinate cannot be greater than 500. Setting your game piece of positionY at the highest possible value: 500.");
+            }
+            else {
+                this.positionX = positionX;
+                this.positionY = positionY;
+                System.out.printf("You have moved the piece to (%s, %s). %n", positionX, positionY);
+            }
+
         }
-        else {
+        else { // when game piece is frozen = true;
             System.out.println("ERROR: Cannot move, you're frozen!");
         }
     }
